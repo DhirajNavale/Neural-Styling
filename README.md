@@ -1,4 +1,3 @@
-# Neural-Styling
 # Neural Style Transfer!
 
 Implemented a  Neural Style Transfer  using **Tensorflow, Keras** and **StreamLit**. This project shows how a a neural network transforms the source image to target image at  multiple iterations. 
