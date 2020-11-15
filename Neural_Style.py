@@ -87,8 +87,8 @@ class Evaluator(object):
 col1, col2 = st.beta_columns(2)
 target_image_path = st.sidebar.file_uploader("Upload Target Image", type=['png', 'jpeg'])
 style_reference_image_path = st.sidebar.file_uploader("Upload Source Image", type=['png', 'jpeg'])
-epochs = st.sidebar.selectbox("Number Of Epochs", [None, 20, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500])
-iterations = st.sidebar.selectbox("After how many iteration you want to see the image ", [None, 2, 6, 8, 10])
+epochs = st.sidebar.selectbox("Number Of Epochs", [None, 20, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000])
+iterations = st.sidebar.selectbox("After how many iteration you want to see the image ", [None, 2, 6, 8, 10, 20])
 j = 0
 if target_image_path and style_reference_image_path:
     target_image = Image.open(target_image_path)
