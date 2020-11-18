@@ -14,3 +14,58 @@ StreamLit = 0.70.0
 
 To download use: `pip install requirement.txt`
 
+
+## Source & Target Image
+<table>
+<tr>
+<th> Source Image </th>
+<th> Target Image </th>
+</tr>
+<tr>
+<td>
+<img src="dog.jpg" alt="Source Image" width="400"/>
+
+
+</td>
+<td>
+
+<img src="Hills.jpeg" alt="Target Image" width="400"/>
+
+</td>
+</tr>
+</table>
+
+## Images Generated At Different Epochs
+<table>
+  <tr>
+<td>
+  <h6> Image At Iteration 0 </h6>
+<img src="my_result_at_iteration_0.png" alt="Image At Iteration 0" width="300"/>
+</td>
+<td>
+<h6> Image At Iteration 100 </h6>
+<img src="my_result_at_iteration_100.png" alt="Image At Iteration 100" width="300"/>
+</td>
+</tr>
+    <tr>
+<td>
+  <h6> Image At Iteration 200 </h6>
+<img src="my_result_at_iteration_200.png" alt="Image At Iteration 200" width="300"/>
+</td>
+<td>
+<h6> Image At Iteration 300 </h6>
+<img src="my_result_at_iteration_300.png" alt="Image At Iteration 300" width="300"/>
+</td>
+</tr>
+    <tr>
+<td>
+  <h6> Image At Iteration 400 </h6>
+<img src="my_result_at_iteration_400.png" alt="Image At Iteration 400" width="300"/>
+</td>
+<td>
+<h6> Image At Iteration 500 </h6>
+<img src="my_result_at_iteration_500.png" alt="Image At Iteration 500" width="300"/>
+</td>
+</tr>
+</table>
+
