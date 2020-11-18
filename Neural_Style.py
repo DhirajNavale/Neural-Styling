@@ -24,7 +24,7 @@ components.html(
     """,
     height=100,
 )
-st.title("Play with Neural Style")
+st.title("Play with Neural Style Network")
 def preprocess_image(image_path, img_height, img_width):
     img = load_img(image_path, target_size = (img_height, img_width))
     img = img_to_array(img)
@@ -85,13 +85,15 @@ class Evaluator(object):
         return grad_values
 
 col1, col2 = st.beta_columns(2)
-target_image_path = st.sidebar.file_uploader("Upload Target Image", type=['png', 'jpeg'])
-style_reference_image_path = st.sidebar.file_uploader("Upload Source Image", type=['png', 'jpeg'])
+width, height = 0
+target_image_path = st.sidebar.file_uploader("Upload Target Image", type=['png', 'jpeg', 'jpg'])
+style_reference_image_path = st.sidebar.file_uploader("Upload Source Image", type=['png', 'jpeg', 'jpg'])
 epochs = st.sidebar.selectbox("Number Of Epochs", [None, 20, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000])
 iterations = st.sidebar.selectbox("After how many iteration you want to see the image ", [None, 2, 6, 8, 10, 20])
 j = 0
 if target_image_path and style_reference_image_path:
     target_image = Image.open(target_image_path)
+    width, height = target_image.size
     source_file = Image.open(style_reference_image_path)
     col1.image(target_image, channels='RGB', width=200, caption="Target Image")
     col2.image(source_file, channels='RGB', width=300, caption="Source Image")
@@ -101,8 +103,8 @@ result_prefix = 'my_result'
 
 if target_image_path and style_reference_image_path and epochs and iterations:
     if st.sidebar.button("Start"):
-        width, height = load_img(target_image_path).size
-        img_height = 300
+       # width, height = load_img(target_image_path).size
+        img_height = height
         img_width = int(width * img_height / height)
         target_image = K.constant(preprocess_image(target_image_path, img_height=img_height, img_width=img_width))
         style_reference_image = K.constant(preprocess_image(style_reference_image_path, img_height=img_height, img_width=img_width))
@@ -170,11 +172,3 @@ if target_image_path and style_reference_image_path and epochs and iterations:
 
             my_bar.progress(round((i % epochs) * 10, 2))
         st.balloons()
-            #end_time = time.time()
-            # print('Iteration %d completed in %ds' % (i, end_time - start_time))
-# Press the green button in the gutter to run the script.
-# if this == that:
-#   quit()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-#<a class="btn btn-block btn-social btn-lg btn-github" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-lg']);"><i class="fa fa-github"></i>Sign in with GitHub</a>
